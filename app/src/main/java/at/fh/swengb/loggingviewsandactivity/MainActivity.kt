@@ -36,8 +36,19 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        open_rating.setOnClickListener {
-            val intent = Intent(this, RatingActivity::class.java)
+      //  open_rating.setOnClickListener {
+       //     val intent = Intent(this, RatingActivity::class.java)
+         //   startActivity(intent)
+     //   }
+
+        open_higher_order.setOnClickListener {
+            val intent = Intent( this, HigherOrderActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        open_lessons.setOnClickListener {
+            val intent = Intent(this, LessonListActivity::class.java)
             startActivity(intent)
         }
     }
