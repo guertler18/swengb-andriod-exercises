@@ -13,6 +13,7 @@ class HigherOrderActivity : AppCompatActivity() {
         myHigherOrderFunction { it * 102 }
         myHigherOrderFunction { a -> a * 102 }
 
+        kotlinHigherOrderWithList()
 
     }
 
@@ -22,6 +23,22 @@ class HigherOrderActivity : AppCompatActivity() {
         }
     }
 
-   
+    private fun kotlinHigherOrderWithList() {
+        val list = LessonRepository.lessonsList()
 
+
+        val heldByBloder = list.filter { Lecturer("Lukas Bloder") in it.lecturers }.map { x -> "${x.name} - ${x.topic}"}.toString()
+        Log.e("HELD BY BLODER", heldByBloder)
+
+        val topicMap = list.groupBy { it.topic }.toString()
+        Log.e("TOPIC MAP", topicMap)
+
+        val avgLecture = list.map {it.ratings.map { it.ratingValue }}.flatten().average().toString()
+        Log.e("AVERAGE LECTURES", avgLecture)
+
+    }
 }
+
+
+
+

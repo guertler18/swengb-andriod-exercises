@@ -14,4 +14,10 @@ class Lesson(
     fun ratingAverage(): Double {
         return ratings.map {it.ratingValue}.average()
     }
+
+    override fun toString(): String {
+        return "Lesson(id='$id', name='$name', date='$date', topic='$topic', type=$type, lecturers=$lecturers, ratings=$ratings)"
+    }
+
+
 }
